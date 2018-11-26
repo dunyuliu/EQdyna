@@ -162,6 +162,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Benchun Duan**-*Initial work*-[Earthquake Numerical Simulation Lab](https://geogeo.tamu.edu/people/faculty/duanbenchun)
+* **Dunyu Liu**
+* **Bin Luo**
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -169,7 +171,12 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## Reference
+Duan, B. (2010). Role of initial stress rotations in rupture dynamics and ground
+  motion: A case study with implications for the Wenchuan earthquake, J. Geophys.
+  Res. 115.
+Duan, B. (2012). Dynamic rupture of the 2011 Mw 9.0 Tohoku-Oki earthquake: Roles
+  of a possible subducting seamount, J. Geophys. Res. 117
 
 * Hat tip to anyone whose code was used
 * Inspiration

@@ -4,20 +4,20 @@ A parallel Finite Element software to model earthquake spontaneous dynamic ruptu
 
 ## Features
 
-EQdyna features 1) 3D under-integrated hexahedral elements stabilized by hourglass control; 
-2) explicit central difference time integration for efficient and accurate modeling of wave propagation;
+EQdyna is based on Finite Element Method of solid mechanics and features 
+1) 3D under-integrated hexahedral elements stabilized by hourglass control; 
+2) explicit central difference time integration for efficient and accurate modeling of wave propagation; 
 3) the traction-at-split-node technique to model earthquake faults or fractures;
 4) the perfectly matched layer absorbing boundary;
 5) the coarse-grained Q model for attenuation of seismic waves;
 6) various forms of friction laws including slip-weakening, time-weakening, rate- and state- friction with the aging law, slip law and dynamic weakening;
 7) 3D MPI. 
 
-### Prerequisites
-
-What things you need to install the software and how to install them
+### Initializing environments and compiling on ADA, Texas A&M University, HPC.
 
 ```
-Give examples
+Module load intel/2018a
+make # run makefile to complie
 ```
 
 ### Installing

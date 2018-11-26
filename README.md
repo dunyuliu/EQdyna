@@ -108,7 +108,48 @@ Version 4.1.3 - 20161005 - Testing on TPV104 - Modifications include
  critt0:    temporal scale in time weakening for the nucleation phase in slip-weakening law;
  
  srcrad0:   the radius of the nucleation patch for the slip-weakening law;
-          
+ 
+ vrupt0:    forced rupture velocity inside the nucleation patch for the slip-weakening law;
+ rhow:      fluid density in the volume in kg/m3;
+ bulk:      bulk modulus for Drucker-Prager Plasticity;
+ coheplas:  cohesion for Drucker-Prager Plasticity in Pa;
+ tv:        temporal scale for viscoplasticity helping smoothing the pulling back to the yielding curve in s;
+ xsource/ysource/zsource:
+            hypotencer locations along x, y, z directions, respectively, in km for atificial nucleation;
+ vmaxPML:   maximum P wave velocity in the whole model used for PML layers.
+ term:      termination time in s.
+ dt:        time step in s.
+ npx/npy/npz:
+            MPI discretization along x/y/z directions, respectively.            
+```
+
+### in meshgen.f90
+```
+  fric:   1: mus
+          2: mud
+          3: D0 in m
+          4: cohesion in Pa
+          5: time for forced rupture in s; void;
+          6: pore pressure in Pa for the elastic case;
+          7: initial normal stress in Pa for the elastic case; negative for compressional;
+          8: initial shear stress in Pa for the elastic case; positive for right-lateral slipp;
+          9: a in rsf;
+         10: b in rsf;
+         11: L in rsf;
+         12: V0 in rsf;
+         13: f0 in rsf;
+         14: fw in rsf with strong rate-weakening;
+         15: Vw in rsf with strong rate-weakening;
+         16: initial slip-rate along the x axis;
+         17: initial slip-rate along the y axis;
+         18: initial slip-rate along the z axis;
+         19: initial slip-rate magnitude;
+```
+
+```
+  mat:    1: P wave velocity in m/s;
+          2: S wave velocity in m/s;
+          3: material density in km/m3;
 ```
 ## Contributing
 
@@ -120,7 +161,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Benchun Duan** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 

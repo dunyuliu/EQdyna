@@ -22,7 +22,7 @@ make # run makefile to complie EQdyna. An excutable file eqdyna-hyb will be gene
 
 ### Batch file preparation on ADA
 
-Here is an example of a batch file to submit jobs on ADA. The key word is BSUB and contexts after ## is commented.
+Here is an example of the batch file, runeqdyna.txt to submit jobs on ADA. The key word is #BSUB and contexts after # is commented. 
 
 ```
 #BSUB -J job.name
@@ -50,36 +50,57 @@ export OMP_NUM_THREADS=1
 mpirun -np 72 ./eqdyna-hyb # excuting EQdyna
 ```
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+## Job submission on ADA
+After submission, the job will be quened and excuated when resources are avalible.
 ```
-Give an example
+Bsub <runeqdyna.txt
 ```
 
-### And coding style tests
+### Postporcessing
 
-Explain what these tests test and why
+1) run rtp3DMPI.m to plot rupture time contour.
+It coverts results frt.txt* to cplot.txt.  
+2) run timeanalysis.m to analyze computational times used by various modules.
+It processes timeinfo* files.
 
-```
-Give an example
-```
+### History
+Version 4.0-201608-  
+Version 4.1.1 - 20161004 - Testing on TPV8 - Significant simplification of the system that include 
+  1) consolidation of variable declarations; 
+  2) movement of all controallable parameters in globalvar.f90.
+Version 4.1.2 - 20161004 - Testing on TPV27v2, a plastic benchmark problem - Modifications include 
+  1) formma and fromkd in driver.f90 are disabled; 
+  2) parameters controlling the plastic yielding are added in globalvar.f90.
+Version 4.1.3 - 20161005 - Testing on TPV104 - Modifications include
+  1) the rate- and state- friction with aging law and slip law are added;
+  2) time expense analysis is added.
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
+### Ajustable parameters for Version 4.1.3
+## in globalvar.f90
+ C_elastic: 
+          0: plastic model; stress tensors should be assigned to every element in the volume in meshgen.f90
+          1: elastic model; normal and shear stresses should be assigned to on-fault split nodes;
+ C_Nuclea:        
+          0: disabled;
+          1: allow artificial nucleation;
+ friclaw: 
+          1: slip weakening;
+          2: time weakening;
+          3: rate- and state- friction with the aging law;
+          4: rate- and state- friction with strong rate-weakening;
+ C_Q:
+          0: attenuation disabled;
+          1: allow frequency-dependent/-independet attenuation of seismi waves; currently only works with uniform element                 size (rat == 1.0) and elastic models;
+ C_hg:    
+          0：visocus hourglass control;
+          1: KF78 hourglass control; recommended;
+ nPML:  
+          6: default value; number of layers in the Perfetly Matched Layers absorbing boundaries;
+ rat: 
+          1.025: bufferring ratio
+ dx:
+          element size;
+ 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.

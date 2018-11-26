@@ -13,14 +13,14 @@ EQdyna is based on Finite Element Method of solid mechanics and features
 6) various forms of friction laws including slip-weakening, time-weakening, rate- and state- friction with the aging law, slip law and dynamic weakening;
 7) 3D MPI. 
 
-### Initializing environments and compiling on ADA, Texas A&M University, HPC.
+## Initializing environments and compiling on ADA, Texas A&M University, HPC.
 
 ```
 Module load intel/2018a
 make # run makefile to complie EQdyna. An excutable file eqdyna-hyb will be generated. 
 ```
 
-### Batch file preparation on ADA
+## Batch file preparation on ADA
 
 Here is an example of the batch file, runeqdyna.txt to submit jobs on ADA. The key word is #BSUB and contexts after # is commented. 
 
@@ -56,27 +56,29 @@ After submission, the job will be quened and excuated when resources are avalibl
 Bsub <runeqdyna.txt
 ```
 
-### Postporcessing
+## Postporcessing
 
 1) run rtp3DMPI.m to plot rupture time contour.
 It coverts results frt.txt* to cplot.txt.  
 2) run timeanalysis.m to analyze computational times used by various modules.
 It processes timeinfo* files.
 
-### History
+## History
 Version 4.0-201608-  
 Version 4.1.1 - 20161004 - Testing on TPV8 - Significant simplification of the system that include 
   1) consolidation of variable declarations; 
   2) movement of all controallable parameters in globalvar.f90.
+
 Version 4.1.2 - 20161004 - Testing on TPV27v2, a plastic benchmark problem - Modifications include 
   1) formma and fromkd in driver.f90 are disabled; 
   2) parameters controlling the plastic yielding are added in globalvar.f90.
+
 Version 4.1.3 - 20161005 - Testing on TPV104 - Modifications include
   1) the rate- and state- friction with aging law and slip law are added;
   2) time expense analysis is added.
 
-### Ajustable parameters for Version 4.1.3
-## in globalvar.f90
+## Ajustable parameters for Version 4.1.3
+### in globalvar.f90
  C_elastic: 
           0: plastic model; stress tensors should be assigned to every element in the volume in meshgen.f90
           1: elastic model; normal and shear stresses should be assigned to on-fault split nodes;

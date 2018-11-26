@@ -169,7 +169,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+To be determined (An exmaple may look like: This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details)
 
 ## Reference
 Duan, B. (2010). Role of initial stress rotations in rupture dynamics and ground
@@ -177,7 +177,9 @@ Duan, B. (2010). Role of initial stress rotations in rupture dynamics and ground
   Res. 115.
 Duan, B. (2012). Dynamic rupture of the 2011 Mw 9.0 Tohoku-Oki earthquake: Roles
   of a possible subducting seamount, J. Geophys. Res. 117
-
+Duan, B., D. Liu, and A. Yin (2017). Seismic shaking in the North China Basin
+  expected from ruptures of a possible seismic gap, Geophys. Res. Lett. 44 4855-4862.
+  
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc

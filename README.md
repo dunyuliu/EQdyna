@@ -17,26 +17,38 @@ EQdyna is based on Finite Element Method of solid mechanics and features
 
 ```
 Module load intel/2018a
-make # run makefile to complie
+make # run makefile to complie EQdyna. An excutable file eqdyna-hyb will be generated. 
 ```
 
-### Installing
+### Batch file preparation on ADA
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Here is an example of a batch file to submit jobs on ADA. The key word is BSUB and contexts after ## is commented.
 
 ```
-Give the example
-```
+#BSUB -J job.name
 
-And repeat
+## send stderr and stdout to the same file 
+#BSUB -o mpitest.%J
 
-```
-until finished
-```
+## login shell to avoid copying env from login session
+## also helps the module function work in batch jobs
+#BSUB -L /bin/bash
 
-End with an example of getting some data out of the system or using it for a little demo
+## 30 minutes of walltime ([HH:]MM)
+#BSUB -W 04:00
+
+#BSUB -n 72 -M 2700    # 72: total number of cores allocated to the job
+#BSUB -R rusage[mem=2700] span[ptile=12] 
+# mem: the memory allocated to each core
+# span[ptile]: the number of cores used on each computing node
+
+# load intel toolchain
+ml intel/2018a
+ml
+export OMP_NUM_THREADS=1
+
+mpirun -np 72 ./eqdyna-hyb # excuting EQdyna
+```
 
 ## Running the tests
 

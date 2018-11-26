@@ -34,7 +34,7 @@ Here is an example of the batch file, runeqdyna.txt to submit jobs on ADA. The k
 ## also helps the module function work in batch jobs
 #BSUB -L /bin/bash
 
-## 30 minutes of walltime ([HH:]MM)
+## 4 hours of walltime ([HH:]MM)
 #BSUB -W 04:00
 
 #BSUB -n 72 -M 2700    # 72: total number of cores allocated to the job

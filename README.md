@@ -161,7 +161,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Benchun Duan** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Benchun Duan**-*Initial work*-[Earthquake Numerical Simulation Lab](https://geogeo.tamu.edu/people/faculty/duanbenchun)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 

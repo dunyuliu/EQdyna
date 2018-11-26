@@ -79,30 +79,37 @@ Version 4.1.3 - 20161005 - Testing on TPV104 - Modifications include
 
 ## Ajustable parameters for Version 4.1.3
 ### in globalvar.f90
- C_elastic: 
-          0: plastic model; stress tensors should be assigned to every element in the volume in meshgen.f90
-          1: elastic model; normal and shear stresses should be assigned to on-fault split nodes;
- C_Nuclea:        
-          0: disabled;
-          1: allow artificial nucleation;
- friclaw: 
-          1: slip weakening;
-          2: time weakening;
-          3: rate- and state- friction with the aging law;
-          4: rate- and state- friction with strong rate-weakening;
- C_Q:
-          0: attenuation disabled;
-          1: allow frequency-dependent/-independet attenuation of seismi waves; currently only works with uniform element                 size (rat == 1.0) and elastic models;
- C_hg:    
-          0：visocus hourglass control;
-          1: KF78 hourglass control; recommended;
- nPML:  
-          6: default value; number of layers in the Perfetly Matched Layers absorbing boundaries;
- rat: 
-          1.025: bufferring ratio
- dx:
-          element size;
+```
+ C_elastic: 0: plastic model; stress tensors should be assigned to every element in the volume in meshgen.f90
+            1: elastic model; normal and shear stresses should be assigned to on-fault split nodes;
  
+ C_Nuclea:  0: disabled;
+            1: allow artificial nucleation;
+ 
+ friclaw:   1: slip weakening;
+            2: time weakening;
+            3: rate- and state- friction with the aging law;
+            4: rate- and state- friction with strong rate-weakening;
+ 
+ C_Q:       0: attenuation disabled;
+            1: allow frequency-dependent/-independet attenuation of seismi waves; currently only works with uniform element                 size (rat == 1.0) and elastic models;
+ 
+ C_hg:      0：visocus hourglass control;
+            1: KF78 hourglass control; recommended;
+ 
+ nPML:      6: default value; number of layers in the Perfetly Matched Layers absorbing boundaries;
+ 
+ rat:       1.025: bufferring ratio
+ 
+ dx:        element size;
+ 
+ dis4uniF/dis4uniB: the number of elements with dx edge along y axis (-y/+y);
+ 
+ critt0:    temporal scale in time weakening for the nucleation phase in slip-weakening law;
+ 
+ srcrad0:   the radius of the nucleation patch for the slip-weakening law;
+          
+```
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
